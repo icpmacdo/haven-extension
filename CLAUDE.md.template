@@ -97,9 +97,32 @@ See `docs/spec/stack.md` for full details.
 
 ## Working with This Project
 
+**Default mode is discussion, not implementation.** Spec first, code second.
+
 1. **Before coding:** Check spec status in `docs/spec/index.md`
 2. **For stack decisions:** See `docs/spec/stack.md`
 3. **For implementation order:** See `docs/spec/build-order.md`
+
+### Before Suggesting Implementation
+
+Don't suggest implementing a feature or section until:
+
+1. **No unresolved TODOs** in that section
+2. **No open questions** - they've been discussed and answered
+3. **User has approved** - they've reviewed and agreed, not just you writing it
+4. **Status is ✅ Complete** - explicitly marked, not 🔲 Pending
+5. **Dependencies ready** - what this depends on is implemented or well enough defined to use
+6. **UX/UI defined** (if user-facing) - flows, layouts, interactions, error states
+7. **Big picture understood** - how it fits into the whole, no conflicts with other specs
+
+### Dependency Awareness
+
+Be mindful of build order. Before implementing X:
+- Are its dependencies specced and ready?
+- Are they implemented, or defined well enough to code against?
+- Do you understand how X connects to other pieces?
+
+"Well enough defined" = you know what it does, what goes in, what comes back. Enough to write code that uses it.
 
 ---
 

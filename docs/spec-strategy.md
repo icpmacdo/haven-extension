@@ -244,6 +244,52 @@ The user may start new sessions and relies on docs being accurate.
 
 ---
 
+## Spec Before Implementation
+
+### Default Mode: Discussion
+
+The default mode is **discussion**, not implementation. Spec first, code second.
+
+Don't suggest starting implementation until the relevant spec sections are solid. It's tempting to jump into code early, but premature implementation leads to rework, inconsistencies, and wasted effort.
+
+### Implementation Readiness Criteria
+
+A spec section is ready for implementation when:
+
+1. **No unresolved TODOs** - No "TODO", "TBD", or placeholders in that section
+2. **No open questions** - Questions about that section have been discussed and answered
+3. **User has approved** - Not just written, but reviewed and agreed to by the user
+4. **Status is ✅ Complete** - Explicitly marked complete, not 🔲 Pending or Draft
+5. **Dependencies ready** - Anything it depends on is either:
+   - Already implemented, OR
+   - Well enough defined that you know how to use it (what it takes in, what it gives back, how to call it)
+6. **UX/UI defined (if user-facing)** - User flows, layouts, key interactions, error states
+7. **Big picture understood** - How this fits into overall architecture, no conflicts with other specs
+
+### Dependencies and Build Order
+
+Be mindful of what depends on what. Before implementing feature X:
+
+- Are its dependencies specced?
+- Are they implemented, or at least defined well enough to code against?
+- Do you understand how X fits into the bigger picture?
+
+"Well enough defined" means:
+- Data models/schemas are clear
+- API endpoints are defined (method, path, what goes in, what comes back)
+- For internal pieces: what it does, what you pass it, what you get back
+- Enough that you could write code that *uses* it, even if the implementation doesn't exist yet
+
+### What's NOT Required
+
+Don't over-spec. These can emerge during implementation:
+- Every edge case (some you'll discover as you build)
+- Pixel-perfect designs (wireframes and descriptions are enough)
+- Performance optimization details
+- Implementation internals (spec the *what*, not the *how*)
+
+---
+
 ## Anti-Patterns
 
 ### Don't Do This
