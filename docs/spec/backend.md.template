@@ -1,0 +1,153 @@
+# {{PROJECT_NAME}} Backend Architecture
+
+Shared backend patterns, project structure, and common services.
+
+**Status:** 🔲 Pending
+
+---
+
+## Related Specs
+
+- [Stack](stack.md) - Infrastructure and technology choices
+- {{Add links to feature specs that have backend components}}
+
+---
+
+## Overview
+
+{{Brief description of backend architecture - monolith, microservices, serverless, etc.}}
+
+---
+
+## Project Structure
+
+```
+{{project_root}}/
+├── app/
+│   ├── main.py              # Entry point
+│   ├── config.py            # Settings/environment
+│   ├── database.py          # DB connection
+│   │
+│   ├── models/              # Data models
+│   │   └── ...
+│   │
+│   ├── routers/             # API routes
+│   │   └── ...
+│   │
+│   ├── services/            # Business logic
+│   │   └── ...
+│   │
+│   └── utils/               # Shared utilities
+│
+├── tests/                   # Tests
+└── ...
+```
+
+{{Adjust structure for your framework/language}}
+
+---
+
+## Authentication & Authorization
+
+### Strategy
+
+{{Auth approach - sessions, JWT, OAuth, API keys, etc.}}
+
+### User Model
+
+```
+{{Pseudocode or actual model for user/auth}}
+```
+
+### Permission Model
+
+{{How permissions work - roles, capabilities, resource-based, etc.}}
+
+### Session Management
+
+*TODO: Define session handling*
+
+- Token/session expiration
+- Refresh strategy
+- Logout behavior
+
+---
+
+## Database Schema
+
+### Core Tables
+
+{{List core tables with brief descriptions}}
+
+| Table | Purpose |
+|-------|---------|
+| `users` | User accounts and auth |
+| {{table}} | {{purpose}} |
+
+### Relationships
+
+{{Key relationships between tables}}
+
+### Migrations
+
+{{How migrations are handled}}
+
+---
+
+## Shared Services
+
+{{Services used across multiple features}}
+
+### {{Service Name}}
+
+*TODO: Define interface*
+
+- What it does
+- Key methods
+- Error handling
+
+---
+
+## API Conventions
+
+### Response Format
+
+```json
+// Success
+{
+  "data": { ... },
+  "meta": { ... }
+}
+
+// Error
+{
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable message"
+  }
+}
+```
+
+### Pagination
+
+{{How pagination works}}
+
+### Error Codes
+
+| Code | Meaning |
+|------|---------|
+| {{code}} | {{meaning}} |
+
+---
+
+## Real-time Communication
+
+{{Skip if not applicable}}
+
+### WebSocket Protocol
+
+*TODO: Define if needed*
+
+- Connection lifecycle
+- Message formats
+- Heartbeat/keepalive

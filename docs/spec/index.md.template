@@ -1,0 +1,59 @@
+# {{PROJECT_NAME}} Specification
+
+**{{PROJECT_NAME}}** - {{Short tagline or description}}
+
+{{One paragraph explaining what this project is and what problem it solves.}}
+
+---
+
+## Spec Components
+
+### Planning
+| Document | Status | Description |
+|----------|--------|-------------|
+| [Build Order](build-order.md) | 🔲 Pending | Implementation order and dependencies |
+
+### Shared Specs
+| Document | Status | Description |
+|----------|--------|-------------|
+| [Stack](stack.md) | 🔲 Pending | Tech stack, infrastructure, data flow |
+| [Backend](backend.md) | 🔲 Pending | Shared backend architecture, services, schema |
+| [UI](ui.md) | 🔲 Pending | Shared UI patterns, layout, design system |
+
+### Feature Specs
+| Document | Status | Description |
+|----------|--------|-------------|
+| [Feature A](feature-a.md) | 🔲 Pending | {{Description}} |
+| [Feature B](feature-b.md) | 🔲 Pending | {{Description}} |
+
+---
+
+## Project Scope
+
+### Phase 1: {{Name}}
+- {{Key deliverable}}
+- {{Key deliverable}}
+
+### Phase 2: {{Name}}
+- {{Key deliverable}}
+
+### Future
+- {{Ideas for later}}
+
+---
+
+## Target Users
+
+{{Who will use this? Internal users, customers, developers, etc.}}
+
+---
+
+## Key Insights
+
+{{Optional: If you've done research/analysis that informs the design, summarize findings here.}}
+
+---
+
+## External References
+
+{{Links to API docs, research, related projects, etc.}}

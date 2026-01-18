@@ -1,0 +1,127 @@
+# {{PROJECT_NAME}} - Project Guide for Claude
+
+## What is {{PROJECT_NAME}}?
+
+{{One paragraph description of the project. What problem does it solve? Who is it for?}}
+
+---
+
+## Spec Organization
+
+Specs live in `docs/spec/`. They are split into **shared specs** (apply across features) and **feature specs** (specific to one feature). See `docs/spec-strategy.md` for the methodology.
+
+```
+docs/spec/
+├── index.md          # Start here - overview and links to all specs
+├── build-order.md    # Implementation order and dependencies
+├── stack.md          # Tech stack, infrastructure, data flow
+├── backend.md        # Shared backend: project structure, services, schema
+├── ui.md             # Shared UI: layout, design system, components
+└── [feature].md      # One file per major feature
+```
+
+**When working on a feature:**
+1. Read the feature spec (e.g., `feature-name.md`)
+2. Check the "Related Specs" table at the top - it points to shared specs with notes on what's relevant
+3. Consult shared specs (`stack.md`, `backend.md`, `ui.md`) for infrastructure, patterns, and conventions
+
+**Spec status:**
+- ✅ Complete - Spec is written and approved
+- 🔲 Pending - Placeholder with structure, needs content
+
+---
+
+## Key Documentation
+
+| File | Purpose |
+|------|---------|
+| `docs/spec/index.md` | Spec overview - start here for specs |
+| `docs/spec/stack.md` | Complete tech stack reference |
+| `docs/spec-strategy.md` | Reusable spec strategy (methodology reference) |
+
+{{Add other key docs as they emerge - API references, data analysis, etc.}}
+
+---
+
+## Tech Stack Summary
+
+| Layer | Technology |
+|-------|------------|
+| Backend | {{framework, ORM, database}} |
+| Frontend | {{framework, styling, components}} |
+| Infrastructure | {{deployment, networking}} |
+
+See `docs/spec/stack.md` for full details.
+
+---
+
+## Architecture
+
+{{Brief architecture description - monolith vs microservices, key components, etc.}}
+
+```
+{{ASCII diagram of high-level architecture}}
+```
+
+---
+
+## Environment
+
+{{Environment setup notes - .env variables, virtual environments, etc.}}
+
+---
+
+## External Services
+
+{{List any external APIs or services the project integrates with}}
+
+- **{{Service Name}}** - {{Brief description, auth method, link to docs}}
+
+---
+
+## Important Constraints
+
+{{List key constraints that affect implementation decisions:}}
+{{- Deployment constraints (no Docker, no cloud, etc.)}}
+{{- External API limitations (read-only, rate limits, etc.)}}
+{{- Security requirements}}
+{{- Performance requirements}}
+
+---
+
+## Current State
+
+{{What's done, what's in progress, what's planned}}
+
+---
+
+## Working with This Project
+
+1. **Before coding:** Check spec status in `docs/spec/index.md`
+2. **For stack decisions:** See `docs/spec/stack.md`
+3. **For implementation order:** See `docs/spec/build-order.md`
+
+---
+
+## Keep Docs in Sync
+
+**IMPORTANT:** Always update documentation as you work.
+
+- When you implement something, update the relevant spec to reflect reality
+- When you make architecture decisions, document them
+- When you change something that affects other docs, update those too
+- Mark spec sections as ✅ Complete when implemented and verified
+
+The user may start new sessions and relies on docs being accurate. Stale docs cause confusion and wasted time.
+
+---
+
+## Spec Strategy Summary
+
+This project follows the spec strategy in `docs/spec-strategy.md`. Key principles:
+
+1. **Discuss before writing** - Specs emerge from conversation
+2. **Living documents** - Update specs as you build
+3. **Separate concerns** - Stack, backend, UI, features in separate docs
+4. **Cross-reference** - Feature specs link to relevant shared specs
+5. **Build order** - Know what to build first and why
