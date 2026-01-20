@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havelock Orality Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <div class="controls">
+      <label class="toggle">
+        <input type="checkbox" id="toggle-selection-only">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-text">Selection only</span>
+    </div>
+
+    <!-- Idle State -->
+    <div id="state-idle" class="state">
+      <p class="prompt">Click Analyze to score this page's orality</p>
+      <button id="btn-analyze" class="btn-primary">Analyze</button>
+      <p class="footer">Sends text to Havelock for analysis. Nothing is stored.</p>
+    </div>
+
+    <!-- Loading State -->
+    <div id="state-loading" class="state hidden">
+      <div class="spinner"></div>
+      <p class="loading-text">Analyzing...</p>
+      <button class="btn-primary" disabled>Analyze</button>
+    </div>
+
+    <!-- Success State -->
+    <div id="state-success" class="state hidden">
+      <div class="score-display">
+        <span id="score-value" class="score-value">0.65</span>
+        <span id="score-label" class="score-label">Mixed</span>
+      </div>
+      <p id="description" class="description">
+        Text shows characteristics of both oral and literate traditions...
+      </p>
+      <div class="stats-row">
+        <span id="stats-words"><span class="stat-value">0</span> words</span>
+        <span class="stat-separator">·</span>
+        <span id="stats-chunks"><span class="stat-value">0</span> chunks</span>
+      </div>
+      <div id="chunk-breakdown" class="chunk-breakdown hidden">
+        <div class="chunk-header">
+          <span class="chunk-title">Chunk breakdown</span>
+          <span id="chunk-count" class="chunk-count">0 chunks</span>
+        </div>
+        <div id="chunk-chart" class="chunk-chart"></div>
+        <ol id="chunk-list" class="chunk-list"></ol>
+      </div>
+      <div id="warning-box" class="warning-box hidden">
+        <span class="warning-icon">⚠</span>
+        <span id="warning-text"></span>
+      </div>
+      <div id="notes-box" class="notes-box hidden">
+        <span id="notes-text"></span>
+      </div>
+      <button id="btn-analyze-again" class="btn-primary">Analyze Again</button>
+    </div>
+
+    <!-- Error State -->
+    <div id="state-error" class="state hidden">
+      <div class="error-icon">✕</div>
+      <p class="error-title">Analysis failed</p>
+      <p id="error-message" class="error-message">
+        Request timed out. The API may be cold-starting.
+      </p>
+      <button id="btn-retry" class="btn-primary">Retry</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

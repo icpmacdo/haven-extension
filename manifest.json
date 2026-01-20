@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Havelock Orality Analyzer",
+  "version": "0.1.0",
+  "description": "Analyze the orality of web text with one click. Scores from 0 (literate) to 1 (oral).",
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus"
+  ],
+
+  "host_permissions": [
+    "https://jnathan--havelock-api-havelockapi-analyze.modal.run/*"
+  ],
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "background": {
+    "service_worker": "background/background.js"
+  }
+}
