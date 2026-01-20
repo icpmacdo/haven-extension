@@ -1,4 +1,4 @@
-# Haven Orality Analyzer
+# Havelock Orality Analyzer
 
 A Chrome extension that scores the "orality" of web text using the Havelock API.
 
@@ -22,7 +22,7 @@ Analyzes text and returns an orality score from 0 (highly literate) to 1 (highly
 
 1. Navigate to any webpage with text content
 2. Optionally select specific text to analyze
-3. Click the Haven extension icon
+3. Click the Havelock extension icon
 4. Click "Analyze" to get the orality score
 
 ## Architecture

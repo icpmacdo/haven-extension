@@ -50,7 +50,7 @@ Key MV3 patterns:
 ### File Structure (MVP)
 
 ```
-haven-extension/
+havelock-extension/
 ├── manifest.json
 ├── popup/
 │   ├── popup.html
