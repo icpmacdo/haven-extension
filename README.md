@@ -1,38 +1,54 @@
-# SPARK
+# Haven Orality Analyzer
 
-**S**pec **P**owered **A**gent-**R**eady **K**it
+A Chrome extension that scores the "orality" of web text using the Havelock API.
 
-A project bootstrapping template for AI-assisted development.
+## What It Does
 
-## What This Is
+Analyzes text and returns an orality score from 0 (highly literate) to 1 (highly oral), along with interpretation and metadata.
 
-SPARK is a structured approach to starting new software projects with AI assistance. Instead of diving straight into code, you build up a specification through conversation—then implement against that spec.
+**Text extraction priority:**
+1. Selected text on the page
+2. Article content (via Readability.js)
+3. Full page text (fallback)
 
-The core idea: **discuss before writing, update as you build**.
+## Installation
+
+1. Clone this repo
+2. Open `chrome://extensions/` in Chrome
+3. Enable "Developer mode"
+4. Click "Load unpacked" and select the repo folder
 
 ## Usage
 
-1. Clone this repo (or use as a GitHub template)
-2. Open a conversation with Claude
-3. Tell Claude what you're building
+1. Navigate to any webpage with text content
+2. Optionally select specific text to analyze
+3. Click the Haven extension icon
+4. Click "Analyze" to get the orality score
 
-That's it. Claude takes it from there.
+## Architecture
 
-## How It Works
+```
+Popup (popup.html/js)
+  ↓ chrome.runtime.sendMessage
+Background Service Worker (background.js)
+  ↓ fetch
+Havelock API (external)
+```
 
-The `CLAUDE.md` file bootstraps the process. When Claude reads it, Claude will:
+## Tech Stack
 
-- Ask what you're building
-- Create project documentation through conversation
-- Fill out specs iteratively as decisions are made
-- Keep everything in sync as you build
+- Chrome Extension (Manifest V3)
+- @mozilla/readability for article extraction
+- Vanilla HTML/CSS/JS
 
-## The Methodology
+## API
 
-See `docs/spec-strategy.md` for the full approach. Key principles:
+Uses the Havelock Orality API. No authentication required.
 
-- **Discuss before writing** - Specs emerge from conversation, not isolation
-- **Living documents** - Update specs as you build and learn
-- **Separate concerns** - Stack, backend, UI, and features in separate docs
-- **Cross-reference** - Feature specs link to relevant shared specs
-- **Build order** - Know what to build first and why
+## Development
+
+See `docs/spec/` for detailed specifications:
+- `index.md` - Overview and links
+- `extension.md` - Feature spec
+- `stack.md` - Tech stack details
+- `build-order.md` - Implementation order
